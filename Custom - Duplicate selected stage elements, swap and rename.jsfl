@@ -3,8 +3,7 @@ fl.trace("=== Custom - Duplicate selected stage elements, swap and rename ===");
 
 var oldNamePart = prompt("Name part to change:", "oldName");
 var newNamePart = "";
-if(oldNamePart) newNamePart = prompt("New name part:", "newName");
-else oldNamePart = "";
+newNamePart = prompt("New name part:", "newName");
 
 var document = fl.getDocumentDOM();
 var library = document.library;
@@ -22,7 +21,15 @@ for(var i = 0; i < selection.length; i++)
 			library.duplicateItem(oldName);
 			
 			library.selectItem(oldName + " copy");
-			var newName = oldName.replace(oldNamePart, newNamePart);
+			var newName;
+			if(oldNamePart)
+			{
+				newName = oldName.replace(oldNamePart, newNamePart);
+			}
+			else
+			{
+				newName = oldName + newNamePart;
+			}
 			library.renameItem(newName);
 			
 			fl.trace(element);

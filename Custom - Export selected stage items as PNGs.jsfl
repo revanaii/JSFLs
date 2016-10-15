@@ -19,6 +19,13 @@ for(var i = 0; i < selection.length; i++)
 			element.x = 0;
 			element.y = 0;			
 			
+			var layerName = element.layer.name;
+			if(layerName == "align center")
+			{
+				element.x = element.width/2;
+				element.y = element.height/2;	
+			}			
+			
 			var path = document.pathURI.replace(document.name, "") + element.libraryItem.name + ".png";
 			fl.trace(path);
 			
