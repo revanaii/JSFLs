@@ -11,7 +11,7 @@ for(var i = 0; i < selection.length; i++)
 		var element = selection[i];
 		if(element.elementType == "instance")
 		{	
-			element.name = instanceName;
+			element.name = instanceName != null ? instanceName : '';
 		}
 }
 document.selectNone();
