@@ -2,7 +2,7 @@
 
 fl.trace("");
 fl.trace("=== Custom - Set cacheAsBitmap for instances from specified folder ===");
-
+fl.showIdleMessage(false);
 var convertableFolderName = "_bmpConvertable/";
 
 var curr_doc = fl.getDocumentDOM();

@@ -1,6 +1,6 @@
 ﻿fl.trace("");
 fl.trace("=== Custom - Convert to Bitmap 1x under _bmpConvertable folder ===");
-
+fl.showIdleMessage(false);
 var library = fl.getDocumentDOM().library;
 var libraryItems = library.items;
 for(var i = 0; i < libraryItems.length; i++)
