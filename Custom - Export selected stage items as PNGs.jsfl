@@ -29,7 +29,7 @@ for(var i = 0; i < selection.length; i++)
 			var path = document.pathURI.replace(document.name, "") + element.libraryItem.name + ".png";
 			fl.trace(path);
 			
-			document.exportPNG(path, false, true);	
+			document.exportPNG(path, true, true);	
 			
 			element.x = elementInitX;
 			element.y = elementInitY;
