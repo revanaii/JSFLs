@@ -1,18 +1,25 @@
 ﻿fl.trace("");
 fl.trace("=== Custom - Export selected stage items as PNGs ===");
 
+var pathBase = document.pathURI.replace(document.name, "")
+//var exportPath = prompt("Select export path", pathBase);
+var exportPath = fl.browseForFolderURL("Select export path");  
+fl.trace(exportPath)
 
-var document = fl.getDocumentDOM();
-var documentInitWidth = document.width;
-var documentInitHeight = document.height;
+if(exportPath != null)
+{
+	var document = fl.getDocumentDOM();
+	var documentInitWidth = document.width;
+	var documentInitHeight = document.height;
 
-offsetAllStageElements(3000);
-exportElements();
-offsetAllStageElements(-3000);
+	offsetAllStageElements(3000);
+	exportElements();
+	offsetAllStageElements(-3000);
 
-document.width = documentInitWidth;	
-document.height = documentInitHeight;
-document.selectNone();
+	document.width = documentInitWidth;	
+	document.height = documentInitHeight;
+	document.selectNone();
+}
 
 
 
@@ -44,8 +51,8 @@ function exportElements()
 					element.y = element.height/2;	
 				}			
 				
-				var path = document.pathURI.replace(document.name, "") + element.libraryItem.name + ".png";
-				fl.trace(path);
+				var path = exportPath + "/" + element.libraryItem.name + ".png";
+				//fl.trace(path);
 				
 				document.exportPNG(path, true, true);	
 				
