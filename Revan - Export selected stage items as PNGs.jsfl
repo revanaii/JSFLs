@@ -3,7 +3,9 @@ fl.trace("Revan - Export selected stage items as PNGs");
 
 //var pathBase = document.pathURI.replace(document.name, "")
 var exportPath = fl.browseForFolderURL("Select export path");  
-fl.trace(exportPath)
+fl.trace(exportPath);
+
+var useLibraryFolderStructure = confirm("Use library folder structure?");
 
 
 var document = fl.getDocumentDOM();
@@ -35,6 +37,10 @@ function exportElements()
 					continue;
 				}				
 				
+				var fullNameInLib = element.libraryItem.name;
+				if(fullNameInLib.indexOf("_parts") != -1) continue;
+				if(fullNameInLib.indexOf("_trash") != -1) continue;
+				
 				document.width = Math.ceil(element.width);	
 				document.height = Math.ceil(element.height);
 			
@@ -48,9 +54,19 @@ function exportElements()
 					element.x = element.width/2;
 					element.y = element.height/2;	
 				}			
-				
-				var path = exportPath + "/" + element.libraryItem.name + ".png";
-				//fl.trace(path);
+
+				var nameToUse;
+				if(useLibraryFolderStructure)
+				{
+					nameToUse = fullNameInLib;
+				}
+				else 
+				{
+					var split = fullNameInLib.split("/");
+					nameToUse = split[split.length - 1];
+				}
+				var path = exportPath + "/" + nameToUse + ".png";
+				fl.trace(path);
 				
 				document.exportPNG(path, true, true);	
 				
