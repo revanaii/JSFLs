@@ -1,5 +1,5 @@
 ﻿fl.trace("");
-fl.trace("=== Custom - Delete selected stage elements from library ===");
+fl.trace("Revan - Delete selected stage elements from library");
 
 var document = fl.getDocumentDOM();
 var library = document.library;
@@ -13,3 +13,4 @@ for(var i = 0; i < selection.length; i++)
 		}
 }
 document.selectNone();
+fl.trace("");

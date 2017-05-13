@@ -1,25 +1,23 @@
 ﻿fl.trace("");
-fl.trace("=== Custom - Export selected stage items as PNGs ===");
+fl.trace("Revan - Export selected stage items as PNGs");
 
-var pathBase = document.pathURI.replace(document.name, "")
-//var exportPath = prompt("Select export path", pathBase);
+//var pathBase = document.pathURI.replace(document.name, "")
 var exportPath = fl.browseForFolderURL("Select export path");  
 fl.trace(exportPath)
 
-if(exportPath != null)
-{
-	var document = fl.getDocumentDOM();
-	var documentInitWidth = document.width;
-	var documentInitHeight = document.height;
 
-	offsetAllStageElements(3000);
-	exportElements();
-	offsetAllStageElements(-3000);
+var document = fl.getDocumentDOM();
+var documentInitWidth = document.width;
+var documentInitHeight = document.height;
 
-	document.width = documentInitWidth;	
-	document.height = documentInitHeight;
-	document.selectNone();
-}
+offsetAllStageElements(3000);
+exportElements();
+offsetAllStageElements(-3000);
+
+document.width = documentInitWidth;	
+document.height = documentInitHeight;
+document.selectNone();
+
 
 
 
@@ -81,3 +79,5 @@ function offsetAllStageElements(tmpElemetsOffset)
 		i++;
 	}
 }
+
+fl.trace("");

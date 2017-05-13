@@ -1,5 +1,7 @@
 ﻿fl.trace("");
-fl.trace("=== Custom - Custom - Set instance name for selected stage elements as class name ===");
+fl.trace("Revan - Set instance name for selected stage elements");
+
+var instanceName = prompt("Instance name:", "instance");
 
 var document = fl.getDocumentDOM();
 var library = document.library;
@@ -9,8 +11,8 @@ for(var i = 0; i < selection.length; i++)
 		var element = selection[i];
 		if(element.elementType == "instance")
 		{	
-			var className = element.libraryItem.linkageClassName;
-			element.name = className != null ? className : '';
+			element.name = instanceName != null ? instanceName : '';
 		}
 }
 document.selectNone();
+fl.trace("");

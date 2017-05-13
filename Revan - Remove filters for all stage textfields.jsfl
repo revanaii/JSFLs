@@ -1,7 +1,5 @@
-﻿fl.outputPanel.clear();
-
-fl.trace("");
-fl.trace("=== Custom - Remove filters for all stage textfields ===");
+﻿fl.trace("");
+fl.trace("Revan - Remove filters for all stage textfields");
 
 var curr_doc = fl.getDocumentDOM();
 
@@ -43,3 +41,4 @@ function iterate(theTimeline, theTab)
 
 document.selectNone();
 document.exitEditMode();
+fl.trace("");

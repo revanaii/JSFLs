@@ -1,5 +1,5 @@
 ﻿fl.trace("");
-fl.trace("=== Custom - Set all bitmaps loseless ===");
+fl.trace("Revan - Disable all bitmaps smoothing");
 
 var library = fl.getDocumentDOM().library;
 var libraryItems = library.items;
@@ -9,6 +9,9 @@ for(var i = 0; i < libraryItems.length; i++)
 	if(item.itemType == "bitmap")
 	{
 		item.compressionType = "lossless";
-		fl.trace(item.name + " compressionType=" + item.compressionType);
+		item.useDeblocking = false;
+		item.allowSmoothing = false;
+		//fl.trace(item.name + " useDeblocking=" + item.useDeblocking + " allowSmoothing=" + item.allowSmoothing);
 	}
 }
+fl.trace("");

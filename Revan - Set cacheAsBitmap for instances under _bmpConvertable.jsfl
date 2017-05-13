@@ -1,7 +1,5 @@
-﻿fl.outputPanel.clear();
-
-fl.trace("");
-fl.trace("=== Custom - Set cacheAsBitmap for instances from specified folder ===");
+﻿fl.trace("");
+fl.trace("Revan - Set cacheAsBitmap for instances under _bmpConvertable");
 fl.showIdleMessage(false);
 var convertableFolderName = "_bmpConvertable/";
 
@@ -48,3 +46,4 @@ function displayAllElements(theTimeline, theTab)
 
 document.selectNone();
 document.exitEditMode();
+fl.trace("");

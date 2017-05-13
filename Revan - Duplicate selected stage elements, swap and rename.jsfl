@@ -1,5 +1,5 @@
 ﻿fl.trace("");
-fl.trace("=== Custom - Duplicate selected stage elements, swap and rename ===");
+fl.trace("Revan - Duplicate selected stage elements, swap and rename");
 
 var oldNamePart = prompt("Name part to change:", "oldName");
 var newNamePart = "";
@@ -45,3 +45,4 @@ for(var i = 0; i < selection.length; i++)
 		}
 }
 document.selectNone();
+fl.trace("");

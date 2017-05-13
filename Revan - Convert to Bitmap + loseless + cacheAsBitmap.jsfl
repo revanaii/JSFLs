@@ -1,5 +1,5 @@
 ﻿fl.trace("");
-fl.trace("=== Custom - Custom - Convert to Bitmap + loseless ===");
+fl.trace("Revan - Convert to Bitmap + loseless + cacheAsBitmap");
 fl.showIdleMessage(false);
 
 var path = fl.scriptURI;
@@ -18,7 +18,8 @@ function runScript(scriptName)
 	fl.runScript(path + scriptName);
 }
 
-runScript('Custom - Convert to Bitmap 1x under _bmpConvertable folder.jsfl');
-runScript('Custom - Set all bitmaps loseless.jsfl');
+runScript('Revan - Convert to Bitmap 1x under _bmpConvertable folder.jsfl');
+runScript('Revan - Set all bitmaps loseless.jsfl');
+runScript('Revan - Set cacheAsBitmap for instances under _bmpConvertable.jsfl');
 
-
+fl.trace("");

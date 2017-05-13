@@ -1,5 +1,5 @@
 ﻿fl.trace("");
-fl.trace("=== Custom - Convert to Bitmap 2x under _bmpConvertable folder ===");
+fl.trace("Revan - Convert to Bitmap 2x under _bmpConvertable folder");
 
 var library = fl.getDocumentDOM().library;
 var libraryItems = library.items;
@@ -47,3 +47,4 @@ document.exitEditMode();
 
 fl.getDocumentDOM().selectAll();			
 document.transformSelection(2, 0, 0, 2);		
+fl.trace("");
